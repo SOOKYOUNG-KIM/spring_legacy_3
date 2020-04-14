@@ -5,8 +5,6 @@ public class LeftArm {
 	private String name;
 	private int size;
 	
-	
-
 	public int getSize() {
 		return size;
 	}

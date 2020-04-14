@@ -14,18 +14,21 @@
 	
 	<bean class="com.hani.s3.robot.Robot" id="r2">
 		<!-- 생성자이용법 -->
-		<constructor-arg name="leftArm" ref="leftArm" ></constructor-arg>
+		<constructor-arg name="leftArm" ref="leftArm"></constructor-arg>
 		<constructor-arg name="rightArm" ref="rightArm"></constructor-arg>
 	</bean>
 	
 	<!-- LeftArm leftArm = new LeftArm() -->
 	<bean class="com.hani.s3.robot.LeftArm" id="leftArm">
-	<property name="name" value="hani"></property>
-	<property name="size" value="20"></property>
+		<!-- setter이용법 -->
+		<property name="name" value="hani"></property>
+		<property name="size" value="20"></property>
 	</bean>
 	
 	<!-- RightArm RightArm = new RightArm() -->
 	<bean class="com.hani.s3.robot.RightArm" id="rightArm">
+		<!-- 생성자이용법 -->
+		
 		<!-- <constructor-arg name="power" value="30"></constructor-arg>
 		<constructor-arg name="color" value="red"></constructor-arg> -->
 		
