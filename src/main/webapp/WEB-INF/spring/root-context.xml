@@ -4,5 +4,52 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- Robot robot = new Robot() -->
+	<bean class="com.hani.s3.robot.Robot" id="r1">
+		<!-- setter이용법 -->
+		<property name="leftArm" ref="leftArm"></property>
+		<property name="rightArm" ref="rightArm"></property>
+	</bean>
+	
+	<bean class="com.hani.s3.robot.Robot" id="r2">
+		<!-- 생성자이용법 -->
+		<constructor-arg name="leftArm" ref="leftArm" ></constructor-arg>
+		<constructor-arg name="rightArm" ref="rightArm"></constructor-arg>
+	</bean>
+	
+	<!-- LeftArm leftArm = new LeftArm() -->
+	<bean class="com.hani.s3.robot.LeftArm" id="leftArm">
+	<property name="name" value="hani"></property>
+	<property name="size" value="20"></property>
+	</bean>
+	
+	<!-- RightArm RightArm = new RightArm() -->
+	<bean class="com.hani.s3.robot.RightArm" id="rightArm">
+		<!-- <constructor-arg name="power" value="30"></constructor-arg>
+		<constructor-arg name="color" value="red"></constructor-arg> -->
+		
+		<!-- <constructor-arg index="0" value="20"></constructor-arg>
+		<constructor-arg index="1" value="blue"></constructor-arg> -->
+		
+		<constructor-arg type="java.lang.Integer" value="20"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="red"></constructor-arg>
+		
+	</bean>
+		
+	
+	
+	
+	<!-- MemberDAO memberDAO = new MemberDAO() -->
+	<bean class="com.hani.s3.member.MemberDAO" id="memberDAO"></bean>
+	
+	<!-- MemberService memberService = new MemberService() -->
+	<bean class="com.hani.s3.member.MemberService" id="memberService">
+	
+	<!-- memberService.setMemberDAO(memberDAO) -->
+		<property name="memberDAO" ref="memberDAO"></property>	<!-- Service 내에 setter가 있어야함 -->
+	</bean>
+		
+	
 		
 </beans>
